@@ -1,0 +1,16 @@
+{
+  "name": "My Groups — Учёт занятий",
+  "short_name": "My Groups",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f6f5fb",
+  "theme_color": "#6d55d9",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
