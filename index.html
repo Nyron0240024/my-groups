@@ -8,16 +8,16 @@
 <title>My Groups</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-:root{--bg:#f6f5fb;--card:#fff;--ink:#242238;--muted:#817e92;--line:#eceaf3;--violet:#7058d8;--pale:#f0edff;--green:#16865c;--red:#d34f61;--shadow:0 8px 28px #34265d0b}
+:root{--bg:#f1f7f5;--card:#ffffff;--ink:#203632;--muted:#718781;--line:#dfece7;--violet:#4d9b8b;--pale:#e6f3ef;--green:#27866f;--red:#c75c68;--shadow:0 10px 30px #244c4210}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
 button,input{font:inherit}button{cursor:pointer;border:0}.app{max-width:720px;margin:auto;min-height:100dvh;padding:22px 18px 48px}
-header{display:flex;align-items:center;justify-content:space-between;margin:8px 0 26px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:14px;background:var(--violet);color:white;display:grid;place-items:center;font-size:20px;font-weight:800}.brand h1{font-size:20px;margin:0;letter-spacing:-.5px}.sub{color:var(--muted);font-size:12px;margin-top:2px}
+header{display:flex;align-items:center;justify-content:space-between;margin:8px 0 26px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:15px;background:linear-gradient(145deg,#75b8a8,#438f83);color:white;display:grid;place-items:center;font-size:20px;font-weight:800;box-shadow:0 6px 16px #4d9b8b30}.brand h1{font-size:20px;margin:0;letter-spacing:-.5px}.sub{color:var(--muted);font-size:12px;margin-top:2px}
 .sync{font-size:11px;color:var(--green);background:#e8f7f0;padding:7px 10px;border-radius:20px}.screen-title{font-size:25px;letter-spacing:-.8px;margin:0 0 5px}.hint{color:var(--muted);margin:0 0 20px;font-size:13px}
 .group-list{display:grid;gap:11px}.group-card,.panel{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:17px;box-shadow:var(--shadow)}
 .group-card{display:flex;justify-content:space-between;align-items:center;text-align:left;width:100%;color:inherit}.group-card strong{font-size:16px}.group-meta{font-size:12px;color:var(--muted);margin-top:4px}.arrow{color:#a5a1b4;font-size:22px}
-.primary{width:100%;background:var(--violet);color:#fff;padding:14px 16px;border-radius:14px;font-weight:650;margin-top:15px}.secondary{background:var(--pale);color:var(--violet);padding:10px 13px;border-radius:12px;font-weight:600}.back{background:none;color:var(--violet);padding:4px 0;margin:0 0 15px;font-weight:650}
+.primary{width:100%;background:linear-gradient(135deg,#5aa99a,#438f83);color:#fff;padding:14px 16px;border-radius:15px;font-weight:650;margin-top:15px;box-shadow:0 7px 18px #4d9b8b25}.secondary{background:var(--pale);color:#397e72;padding:10px 13px;border-radius:12px;font-weight:600}.back{background:none;color:var(--violet);padding:4px 0;margin:0 0 15px;font-weight:650}
 .topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.topline h2{font-size:23px;margin:0;letter-spacing:-.6px}
-.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:12px;color:var(--muted);font-weight:600}.field input{width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 13px;color:var(--ink);outline:none}.field input:focus{border-color:var(--violet);box-shadow:0 0 0 3px #7058d81c}
+.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:12px;color:var(--muted);font-weight:600}.field input{width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 13px;color:var(--ink);outline:none}.field input:focus{border-color:#69aa9d;box-shadow:0 0 0 3px #69aa9d20}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 10px}.section-head h3{font-size:15px;margin:0}.empty{padding:24px;text-align:center;color:var(--muted);font-size:13px;background:#fff;border:1px dashed #dcd8e9;border-radius:15px}
 .homework{border:1px solid var(--line);border-radius:15px;padding:14px;background:#fff;margin:9px 0}.hw-top{display:flex;justify-content:space-between;gap:10px}.hw-title{font-weight:650}.date{font-size:12px;color:var(--muted);white-space:nowrap}.hw-desc{font-size:13px;color:var(--muted);margin-top:5px;white-space:pre-wrap}.student-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #f1eff6}.student-name{font-size:13px}.marks{display:flex;gap:7px}.mark{width:34px;height:32px;border-radius:10px;background:#f3f2f7;color:#aaa;font-weight:800}.mark.done.active{background:#e5f6ee;color:var(--green)}.mark.miss.active{background:#ffedf0;color:var(--red)}
 .small-action{color:var(--violet);background:none;font-size:12px;font-weight:650;padding:5px}.muted{color:var(--muted)}.toolbar{display:flex;gap:8px;align-items:center}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#27243a;color:white;padding:10px 15px;border-radius:12px;font-size:12px;display:none;z-index:10}.loading{padding:70px 20px;text-align:center;color:var(--muted)}.danger{color:var(--red);background:#fff0f1}
@@ -28,7 +28,7 @@ header{display:flex;align-items:center;justify-content:space-between;margin:8px 
 <div id="view"><div class="loading">Загрузка приложения…</div></div>
 </main><div class="toast" id="toast"></div>
 <script>
-const SUPABASE_URL = "YOUR_SUPABASEhttps://pcyacolrskdtloqxxvya.supabase.coURL";
+const SUPABASE_URL = "https://pcyacolrskdtloqxxvya.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_syOVLy2-_Aj2c6F7DNecUw_4140Aa5k";
 let db=null, user=null, groups=[], students=[], homeworks=[], marks={}, currentGroup=null, currentHomework=null;
 const $=s=>document.querySelector(s);
